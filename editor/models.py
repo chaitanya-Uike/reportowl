@@ -3,6 +3,7 @@ from django.db.models.deletion import CASCADE
 from django.utils.text import slugify
 import random
 import string
+from account.models import CustomUser
 
 
 def id_generator():
@@ -11,6 +12,7 @@ def id_generator():
 
 
 class Document(models.Model):
+    owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     title = models.CharField(max_length=300)
     document_id = models.CharField(max_length=24, default=id_generator)
 
