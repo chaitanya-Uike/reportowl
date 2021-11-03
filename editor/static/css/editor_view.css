@@ -5,6 +5,12 @@ main{
     padding: 10px;
 }
 
+.preview-container{
+    max-height: 87vh;
+    width: calc(87vh * (620/877));
+    overflow-y: scroll;
+}
+
 .chapters-container{
     min-width: 30vw;
 }
